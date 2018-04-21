@@ -12,6 +12,8 @@
    ">
 
 	<context:component-scan base-package="com.ar47.ecomfront.controller" />
+	<context:component-scan base-package="com.ar47.ecomback.daoimpl" />
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 

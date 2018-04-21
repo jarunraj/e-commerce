@@ -14,6 +14,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- Linking of ecomfront and ecomback -->
+		<dependency>
+			<groupId>com.ar47</groupId>
+			<artifactId>ecomback</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 		<!-- JAVA EE API -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -29,21 +36,26 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- SPRING -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- JSTL -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
