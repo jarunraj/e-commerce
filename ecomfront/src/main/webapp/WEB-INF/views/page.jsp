@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -24,6 +24,8 @@
 
 <script>
 	window.menu = '${title}';
+
+	window.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap Core CSS -->
@@ -31,6 +33,9 @@
 
 <!-- Bootstrap Cyborg theme CSS -->
 <link href="${css}/cyborg-theme.css" rel="stylesheet">
+
+<!-- Bootstrap dataTables -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -52,7 +57,7 @@
 
 		<!-- Page Content -->
 		<div class="content">
-		
+
 			<!-- Load when home is clicked -->
 			<c:if test="${userClickHome == true}">
 				<%@include file="home.jsp"%>
@@ -67,12 +72,17 @@
 			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-		
+
 			<!-- Load only when contact is clicked -->
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 			
+			<!-- Load only when user clicks show product -->
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+
 		</div>
 
 		<!-- Footer  -->
@@ -83,6 +93,12 @@
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
+
+		<!-- DataTable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
 
 		<!-- Custom JavaScript -->
 		<script src="${js}/myapp.js"></script>

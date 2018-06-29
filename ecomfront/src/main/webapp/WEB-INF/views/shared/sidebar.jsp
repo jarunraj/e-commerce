@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <p class="lead">Game Vault</p>
 
 <div class="list-group">
